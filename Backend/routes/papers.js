@@ -391,17 +391,18 @@ router.get('/:id', async (req, res) => {
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
+
 });
 
-router.post('/cleanup-duplicates', async (req, res) => {
-  try {
-    const result = await cleanupExistingDuplicates();
-    res.json(result);
-  } catch (error) {
-    console.error('Error during cleanup:', error);
-    res.status(500).json({ success: false, message: error.message });
-  }
-});
+// router.post('/cleanup-duplicates', async (req, res) => {
+//   try {
+//     const result = await cleanupExistingDuplicates();
+//     res.json(result);
+//   } catch (error) {
+//     console.error('Error during cleanup:', error);
+//     res.status(500).json({ success: false, message: error.message });
+//   }
+// });
 
 router.patch('/:id/presentation-status', async (req, res) => {
   try {
